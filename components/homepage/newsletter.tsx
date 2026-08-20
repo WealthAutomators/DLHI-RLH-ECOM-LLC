@@ -21,13 +21,15 @@ export function Newsletter() {
   return (
     <section className="py-12 md:py-16">
       <Container>
-        <div className="relative overflow-hidden rounded-xl px-6 py-12 text-center md:px-16 md:py-16">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-purple-900" />
-          <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-white/5" />
-          <div className="absolute -bottom-10 -left-10 h-32 w-32 rounded-full bg-accent/10" />
+        <div className="relative overflow-hidden rounded-[1.75rem] px-6 py-12 text-center md:px-16 md:py-16">
+          <div className="absolute inset-0 bg-gradient-to-br from-primary via-[#1A6B7F] to-[#E8F4F2]" />
+          <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-accent/25" />
+          <div className="absolute -bottom-10 -left-10 h-32 w-32 rounded-full bg-white/10" />
           <div className="relative">
-            <h2 className="text-2xl font-semibold tracking-tight text-white md:text-3xl">{newsletter.title}</h2>
-            <p className="mx-auto mt-3 max-w-lg text-white/80">{newsletter.description}</p>
+            <h2 className="text-2xl font-bold tracking-tight text-white md:text-3xl">
+              {newsletter.title}
+            </h2>
+            <p className="mx-auto mt-3 max-w-lg text-white/85">{newsletter.description}</p>
             {submitted ? (
               <p className="mt-8 text-sm font-medium text-accent">Thank you for subscribing!</p>
             ) : (
@@ -38,9 +40,14 @@ export function Newsletter() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="flex-1 border-white/20 bg-white/10 text-white placeholder:text-white/50 backdrop-blur-sm"
+                  className="h-12 flex-1 rounded-xl border-white/20 bg-white/15 text-white placeholder:text-white/55 backdrop-blur-sm"
                 />
-                <Button type="submit" size="lg" variant="accent" className="shrink-0">
+                <Button
+                  type="submit"
+                  size="lg"
+                  variant="accent"
+                  className="shrink-0 text-foreground hover:bg-accent/90"
+                >
                   {newsletter.buttonText}
                 </Button>
               </form>

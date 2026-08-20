@@ -26,25 +26,23 @@ export default function AboutPage() {
           </div>
           <PageSection title="Our Story">
             <p>
-              AAM Partners LLC was founded with a simple mission: make online shopping easier for
-              families by bringing together quality products across every category in one trusted
-              marketplace. From electronics and home essentials to toys, beauty, and pet supplies —
-              we curate products that deliver real value.
+              DLHI RLH ECOM LLC was founded around a simple idea: modern living should feel
+              beautifully simple. From Delray Beach, Florida, we curate a coastal-modern marketplace
+              of thoughtfully selected products for home, work, and everyday life.
             </p>
             <p className="mt-4">
-              Based in Virginia Beach, Virginia, we work with reliable suppliers to offer competitive
-              prices without compromising on quality. Every product in our catalog is selected with
-              care, and our team is dedicated to making your shopping experience smooth from browsing
-              to checkout.
+              Our catalog spans home, kitchen, bath, tech, workspace, outdoor, beauty, and more —
+              chosen for comfort, design, and everyday usefulness. We believe great products should
+              feel calm, contemporary, and approachable from first browse to final delivery.
             </p>
           </PageSection>
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {[
-            { icon: ShoppingBag, title: "Wide Selection", desc: "12+ categories covering everything your home and family needs." },
-            { icon: Award, title: "Trusted Quality", desc: "Every product is carefully vetted for quality, value, and reliability." },
-            { icon: Heart, title: "Customer First", desc: "30-day returns, responsive support, and a satisfaction guarantee." },
+            { icon: ShoppingBag, title: "Curated Marketplace", desc: "18 categories spanning home, lifestyle, tech, and family essentials." },
+            { icon: Award, title: "Thoughtful Quality", desc: "Every product is selected for design, comfort, and lasting usefulness." },
+            { icon: Heart, title: "Customer First", desc: "30-day returns, responsive support, and a satisfaction-first approach." },
             { icon: Check, title: "Easy Shopping", desc: "One marketplace, one checkout — no jumping between multiple stores." },
           ].map(({ icon: Icon, title, desc }) => (
             <div key={title} className="rounded-xl border border-border bg-card p-6 text-center shadow-sm">
@@ -58,7 +56,7 @@ export default function AboutPage() {
         </div>
 
         <PageSection title="What Our Customers Say" className="mt-16">
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {testimonials.map((t) => (
               <div key={t.id} className="rounded-xl border border-border bg-card p-6 shadow-sm">
                 <StarRating rating={t.rating} showCount={false} size="md" />

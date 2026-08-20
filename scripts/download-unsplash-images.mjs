@@ -1,5 +1,5 @@
 /**
- * Downloads unique Unsplash images for AAM Partners LLC marketplace.
+ * Downloads unique Unsplash images for DLHI RLH ECOM LLC marketplace.
  * Hero, categories, banners, products (×2), and review photos.
  */
 import fs from "fs";

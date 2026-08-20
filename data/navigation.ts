@@ -1,40 +1,67 @@
 import { NavLink } from "@/types";
-import { categories } from "./categories";
+
+export const announcementText = "Thoughtful Finds For Modern Living";
+
+export const categoryStripLinks: NavLink[] = [
+  { label: "Home", href: "/categories/home-living" },
+  { label: "Kitchen", href: "/categories/kitchen" },
+  { label: "Bath", href: "/categories/bathroom" },
+  { label: "Tech", href: "/categories/electronics" },
+  { label: "Workspace", href: "/categories/workspace" },
+  { label: "Outdoor", href: "/categories/outdoor" },
+  { label: "Beauty", href: "/categories/beauty" },
+];
 
 export const navigationLinks: NavLink[] = [
   { label: "Home", href: "/" },
   { label: "Shop", href: "/shop" },
   {
-    label: "Categories",
+    label: "Collections",
     href: "/categories",
-    children: categories.map((c) => ({
-      label: c.name,
-      href: `/categories/${c.slug}`,
-    })),
+    children: [
+      { label: "Modern Home", href: "/categories/home-living" },
+      { label: "Kitchen & Dining", href: "/categories/kitchen" },
+      { label: "Workspace", href: "/categories/workspace" },
+      { label: "Outdoor Living", href: "/categories/outdoor" },
+      { label: "Beauty", href: "/categories/beauty" },
+      { label: "Tech", href: "/categories/electronics" },
+    ],
   },
   { label: "New Arrivals", href: "/new-arrivals" },
-  { label: "Best Sellers", href: "/best-sellers" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
+  { label: "Home & Living", href: "/categories/home-living" },
+  { label: "Deals", href: "/shop?sale=true" },
 ];
 
 export const footerLinks = {
-  company: [
-    { label: "About Us", href: "/about" },
-    { label: "Contact Us", href: "/contact" },
-    { label: "Careers", href: "/contact" },
-    { label: "FAQs", href: "/faq" },
+  shop: [
+    { label: "Shop All", href: "/shop" },
+    { label: "New Arrivals", href: "/new-arrivals" },
+    { label: "Best Sellers", href: "/best-sellers" },
+    { label: "Deals", href: "/shop?sale=true" },
   ],
-  customerCare: [
+  collections: [
+    { label: "Modern Home", href: "/categories/home-living" },
+    { label: "Kitchen & Dining", href: "/categories/kitchen" },
+    { label: "Workspace", href: "/categories/workspace" },
+    { label: "Outdoor Living", href: "/categories/outdoor" },
+    { label: "Beauty", href: "/categories/beauty" },
+  ],
+  support: [
     { label: "Track Order", href: "/track-order" },
     { label: "Returns", href: "/returns" },
     { label: "Shipping Policy", href: "/shipping" },
-    { label: "Support", href: "/contact" },
+    { label: "FAQs", href: "/faq" },
+    { label: "Contact", href: "/contact" },
   ],
-  legal: [
+  policies: [
     { label: "Privacy Policy", href: "/privacy" },
     { label: "Terms & Conditions", href: "/terms" },
     { label: "Refund Policy", href: "/refund" },
+  ],
+  company: [
+    { label: "About Us", href: "/about" },
+    { label: "Contact Us", href: "/contact" },
+    { label: "FAQs", href: "/faq" },
   ],
 };
 

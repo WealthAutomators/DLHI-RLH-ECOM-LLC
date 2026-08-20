@@ -1,10 +1,33 @@
 import { company } from "./company";
 
+const contactByForm =
+  "use the contact form on our website. We typically respond within one business day.";
+
+const contactLine = company.email
+  ? `Email us at ${company.email} or ${contactByForm}`
+  : `Please ${contactByForm}`;
+
+const contactShort = company.email
+  ? `contact us at ${company.email}`
+  : "contact us through our website contact form";
+
+const returnStart = company.email
+  ? `Email us at ${company.email} with your order number and reason for return`
+  : "Submit a return request through our contact form with your order number and reason for return";
+
+const privacyContact = company.email
+  ? `contacting us at ${company.email}`
+  : "using the contact form on our website";
+
+const privacyInquiry = company.email
+  ? `contact us at ${company.email} or write to`
+  : "write to";
+
 export const faqItems = [
   {
-    question: "What types of products does AAM Partners LLC sell?",
+    question: "What types of products does DLHI RLH ECOM LLC sell?",
     answer:
-      "We offer a wide range of products across 12+ categories including electronics, home & kitchen, bathroom essentials, beauty & personal care, toys & games, pet supplies, sports & outdoors, office supplies, health & wellness, baby products, and fashion accessories.",
+      "We offer thoughtfully selected products across home, kitchen, bathroom, electronics, workspace, beauty, sports, outdoor, baby, pet, travel, storage, lighting, and educational toys — a modern general marketplace for everyday living.",
   },
   {
     question: "Do you offer free shipping?",
@@ -14,7 +37,7 @@ export const faqItems = [
   {
     question: "How long does shipping take?",
     answer:
-      "Standard shipping delivers in 3–5 business days. Express shipping delivers in 1–2 business days. Orders placed before 2pm EST on business days ship the same day. You'll receive a tracking number via email once your order ships.",
+      "Standard shipping delivers in 3–5 business days. Express shipping delivers in 1–2 business days. Orders placed before 2pm EST on business days ship the same day. You'll receive a tracking number once your order ships.",
   },
   {
     question: "What is your return policy?",
@@ -24,7 +47,7 @@ export const faqItems = [
   {
     question: "Can I track my order?",
     answer:
-      "Yes. Once your order ships, you'll receive an email with a tracking number and link. You can also visit our Track Order page and enter your order number and email address to check status.",
+      "Yes. Once your order ships, you'll receive a tracking number. You can also visit our Track Order page and enter your order number and email address to check status.",
   },
   {
     question: "Do you ship internationally?",
@@ -34,7 +57,7 @@ export const faqItems = [
   {
     question: "Are your products quality-checked?",
     answer:
-      "Absolutely. We partner with trusted suppliers and carefully curate every product in our marketplace. Each item is selected for quality, value, and reliability before being listed on our site.",
+      "Absolutely. We carefully curate every product for quality, design, and everyday usefulness before listing it in our marketplace.",
   },
   {
     question: "How do I use a coupon code?",
@@ -48,14 +71,13 @@ export const faqItems = [
   },
   {
     question: "How can I contact customer support?",
-    answer:
-      `Our support team is available Monday through Friday, 9am–6pm EST. Email us at ${company.email} or use the contact form on our website. We typically respond within one business day.`,
+    answer: `Our support team is available Monday through Friday, 9am–6pm EST. ${contactLine}`,
   },
 ];
 
 export const shippingPolicy = {
   title: "Shipping Policy",
-  description: "Everything you need to know about how we deliver your AAM Partners LLC orders.",
+  description: "Everything you need to know about how we deliver your DLHI RLH ECOM LLC orders.",
   sections: [
     {
       title: "Processing Time",
@@ -74,7 +96,7 @@ export const shippingPolicy = {
     {
       title: "Order Tracking",
       content:
-        "Once your order ships, you'll receive a confirmation email with a tracking number. You can track your package directly from the email link or visit our Track Order page.",
+        "Once your order ships, you'll receive a confirmation with a tracking number. You can track your package from that link or visit our Track Order page.",
     },
     {
       title: "Shipping Restrictions",
@@ -83,14 +105,14 @@ export const shippingPolicy = {
     },
     {
       title: "Lost or Damaged Packages",
-      content: `If your package arrives damaged or doesn't arrive within 10 business days of the estimated delivery date, please contact us at ${company.email}. We'll work with the carrier to resolve the issue and ensure you receive your order.`,
+      content: `If your package arrives damaged or doesn't arrive within 10 business days of the estimated delivery date, please ${contactShort}. We'll work with the carrier to resolve the issue and ensure you receive your order.`,
     },
   ],
 };
 
 export const returnPolicy = {
   title: "Return Policy",
-  description: "We want you to love every AAM Partners LLC purchase. If you're not satisfied, we're here to help.",
+  description: "We want you to love every DLHI RLH ECOM LLC purchase. If you're not satisfied, we're here to help.",
   sections: [
     {
       title: "30-Day Return Window",
@@ -101,7 +123,7 @@ export const returnPolicy = {
       title: "How to Start a Return",
       content: "",
       list: [
-        "Email us at " + company.email + " with your order number and reason for return",
+        returnStart,
         "We'll send you a prepaid return label within 1 business day",
         "Pack items securely in original packaging and attach the label",
         "Drop off at any authorized shipping location",
@@ -128,7 +150,7 @@ export const returnPolicy = {
 
 export const refundPolicy = {
   title: "Refund Policy",
-  description: "Our commitment to fair and transparent refunds for every AAM Partners LLC order.",
+  description: "Our commitment to fair and transparent refunds for every DLHI RLH ECOM LLC order.",
   sections: [
     {
       title: "Refund Eligibility",
@@ -156,14 +178,16 @@ export const refundPolicy = {
     },
     {
       title: "Contact Us",
-      content: `Questions about refunds? Reach our team at ${company.email} Monday through Friday, 9am–6pm EST.`,
+      content: company.email
+        ? `Questions about refunds? Reach our team at ${company.email} Monday through Friday, 9am–6pm EST.`
+        : "Questions about refunds? Reach our team through the contact form Monday through Friday, 9am–6pm EST.",
     },
   ],
 };
 
 export const privacyPolicy = {
   title: "Privacy Policy",
-  description: "Last updated: January 1, 2026. How AAM Partners LLC collects, uses, and protects your information.",
+  description: "Last updated: January 1, 2026. How DLHI RLH ECOM LLC collects, uses, and protects your information.",
   sections: [
     {
       title: "Information We Collect",
@@ -195,23 +219,25 @@ export const privacyPolicy = {
     {
       title: "Your Rights",
       content:
-        "You may request access to, correction of, or deletion of your personal data at any time by contacting us at " + company.email + ". Virginia residents have additional rights under applicable state privacy laws.",
+        "You may request access to, correction of, or deletion of your personal data at any time by " +
+        privacyContact +
+        ". Florida residents have additional rights under applicable state privacy laws.",
     },
     {
       title: "Contact",
-      content: `For privacy-related inquiries, contact us at ${company.email} or write to: ${company.name}, ${company.address.street}, ${company.address.city}, ${company.address.state} ${company.address.zip}.`,
+      content: `For privacy-related inquiries, ${privacyInquiry}: ${company.name}, ${company.address.street}, ${company.address.city}, ${company.address.state} ${company.address.zip}.`,
     },
   ],
 };
 
 export const termsPolicy = {
   title: "Terms & Conditions",
-  description: "Please read these terms carefully before using the AAM Partners LLC website.",
+  description: "Please read these terms carefully before using the DLHI RLH ECOM LLC website.",
   sections: [
     {
       title: "Acceptance of Terms",
       content:
-        "By accessing and using the AAM Partners LLC website, you agree to be bound by these Terms and Conditions. If you do not agree, please do not use our website.",
+        "By accessing and using the DLHI RLH ECOM LLC website, you agree to be bound by these Terms and Conditions. If you do not agree, please do not use our website.",
     },
     {
       title: "Products & Pricing",
@@ -226,17 +252,17 @@ export const termsPolicy = {
     {
       title: "Intellectual Property",
       content:
-        "All content on this website — including text, images, logos, and design — is the property of AAM Partners LLC and protected by copyright and trademark laws. You may not reproduce, distribute, or use our content without written permission.",
+        "All content on this website — including text, images, logos, and design — is the property of DLHI RLH ECOM LLC and protected by copyright and trademark laws. You may not reproduce, distribute, or use our content without written permission.",
     },
     {
       title: "Limitation of Liability",
       content:
-        "AAM Partners LLC shall not be liable for any indirect, incidental, or consequential damages arising from your use of our website or products. Our total liability shall not exceed the amount you paid for the product in question.",
+        "DLHI RLH ECOM LLC shall not be liable for any indirect, incidental, or consequential damages arising from your use of our website or products. Our total liability shall not exceed the amount you paid for the product in question.",
     },
     {
       title: "Governing Law",
       content:
-        "These terms are governed by the laws of the Commonwealth of Virginia, United States. Any disputes shall be resolved in the courts of Virginia Beach, Virginia.",
+        "These terms are governed by the laws of the State of Florida, United States. Any disputes shall be resolved in the courts of Palm Beach County, Florida.",
     },
   ],
 };

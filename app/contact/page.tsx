@@ -18,6 +18,18 @@ export default function ContactPage() {
     setSubmitted(true);
   };
 
+  const contactItems = [
+    ...(company.email
+      ? [{ icon: Mail, label: "Email", value: company.email }]
+      : []),
+    {
+      icon: MapPin,
+      label: "Address",
+      value: `${company.address.street}, ${company.address.city}, ${company.address.state} ${company.address.zip}`,
+    },
+    { icon: Clock, label: "Hours", value: company.hours },
+  ];
+
   return (
     <>
       <PageHero
@@ -36,15 +48,7 @@ export default function ContactPage() {
             </p>
 
             <div className="mt-8 space-y-6">
-              {[
-                { icon: Mail, label: "Email", value: company.email },
-                {
-                  icon: MapPin,
-                  label: "Address",
-                  value: `${company.address.street}, ${company.address.city}, ${company.address.state} ${company.address.zip}`,
-                },
-                { icon: Clock, label: "Hours", value: company.hours },
-              ].map(({ icon: Icon, label, value }) => (
+              {contactItems.map(({ icon: Icon, label, value }) => (
                 <div key={label} className="flex items-start gap-4">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10">
                     <Icon className="h-4 w-4 text-primary" />
